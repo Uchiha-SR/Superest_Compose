@@ -15,8 +15,13 @@ import androidx.compose.ui.res.painterResource
 import dev.android.superest_compose.R
 import kotlinx.coroutines.delay
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import dev.android.superest_compose.Greeting
+import dev.android.superest_compose.ui.theme.Superest_ComposeTheme
 
 @Composable
 fun SplashScreen() {
@@ -46,6 +51,15 @@ fun SplashScreen() {
         color = colorResource(R.color.green)) ){
         Image(painter = painterResource(id = R.drawable.ic_carrot),
             contentDescription = "Logo",
-            modifier = Modifier.scale(scale.value))
+          modifier = Modifier.size(48.dp)
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    Superest_ComposeTheme {
+        SplashScreen()
     }
 }
