@@ -5,13 +5,10 @@
 <p float="left">
 <img src="https://i.ibb.co/MPzyDmN/1.jpg" width="200">
 <img src="https://i.ibb.co/Gnc7qJF/2.jpg" width="200">
-<img src="https://i.ibb.co/PTfD8BF/3.jpg" width="200">
-<img src="https://i.ibb.co/hgXyBD8/4.jpg" width="200">
+
 </p>
 <p float="left">
-<img src="https://c.top4top.io/p_2294eyxm11.jpg" width="200">
-<img src="https://i.ibb.co/ggGfHzC/6.jpg" width="200">
-<img src="https://i.ibb.co/0JpCnBd/7.jpg" width="200">
+
 <img src="https://d.top4top.io/p_2294vuk492.jpg" width="200">
 </p>
 <p float="left">
