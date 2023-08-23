@@ -18,8 +18,5 @@
 <img src="https://i.ibb.co/3sXQ3Dr/16.jpg" width="200">
 </p>
 <p float="left">
-<img src="https://i.ibb.co/MC4kXZs/17.jpg" width="200">
-<img src="https://i.ibb.co/441ZYR0/18.jpg" width="200">
-<img src="https://i.ibb.co/9swvx7V/19.jpg" width="200">
-<img src="https://i.ibb.co/PFH7zBP/20.jpg" width="200">
+
 </p>
