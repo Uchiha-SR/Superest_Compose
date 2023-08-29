@@ -10,7 +10,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import dev.android.superest_compose.presentation.SplashScreen
+import dev.android.superest_compose.presentation.signin.google_signin.GoogleSignInButton
 import dev.android.superest_compose.ui.theme.Superest_ComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,10 +27,17 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                   //  color = MaterialTheme.colors.background
                 ) {
-                    SplashScreen()
+               //   SplashScreen()
+
+                    GoogleSignInButton()
+
                 }
             }
         }
+
+
+
+
     }
 }
 
