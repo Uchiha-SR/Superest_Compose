@@ -32,12 +32,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import dev.android.superest_compose.presentation.navigaton.Screen
 import dev.android.superest_compose.ui.theme.Superest_ComposeTheme
 
 @Composable
 
 
-fun Welcome() {
+fun Welcome(navController: NavHostController) {
 
     Box(
         modifier = Modifier
@@ -121,7 +123,9 @@ fun Welcome() {
                     //    color = colorResource(R.color.green)
                //     )
                 //    .size(120.dp),
-                onClick = { /* ... */ },
+                onClick = { /* ... */
+
+                    navController.navigate(Screen.LoginScreen.route)},
              //   colors = ButtonDefaults.buttonColors(backgroundColor =  colorResource(R.color.green)),
                 // Uses ButtonDefaults.ContentPadding by default
 
@@ -226,6 +230,7 @@ fun Welcome() {
     } */
 }
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview1() {
@@ -233,3 +238,4 @@ fun DefaultPreview1() {
         Welcome()
     }
 }
+*/

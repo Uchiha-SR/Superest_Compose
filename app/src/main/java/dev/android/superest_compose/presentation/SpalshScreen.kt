@@ -20,11 +20,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import dev.android.superest_compose.Greeting
 import dev.android.superest_compose.ui.theme.Superest_ComposeTheme
 
 @Composable
-fun SplashScreen() {
+fun SplashScreen(navController: NavHostController,) {
     val scale = remember {
         androidx.compose.animation.core.Animatable(0f)
     }
@@ -40,7 +41,7 @@ fun SplashScreen() {
                 })
         )
         delay(3000L)
-      //  navController.navigate("main_screen")
+        navController.navigate("Welcome")
     }
 
     // Image
@@ -56,6 +57,7 @@ fun SplashScreen() {
     }
 }
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
@@ -63,3 +65,4 @@ fun DefaultPreview() {
         SplashScreen()
     }
 }
+*/
