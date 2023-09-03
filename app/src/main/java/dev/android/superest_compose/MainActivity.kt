@@ -12,7 +12,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import dagger.hilt.android.AndroidEntryPoint
-import dev.android.superest_compose.presentation.GoogleSignIn
+
 import dev.android.superest_compose.ui.theme.Superest_ComposeTheme
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                //   SplashScreen()
                  //  Navigation()
-                    GoogleSignIn()
+               //     GoogleSignIn()
               //      GoogleSignInButton()
 
                 }
