@@ -33,7 +33,7 @@ fun SearchBar(state: MutableState<TextFieldValue>) {
                 Icons.Default.Search,
                 contentDescription = "",
                 modifier = Modifier
-                    .padding(15.dp)
+                    .padding(55.dp)
                     .size(24.dp)
             )
         },

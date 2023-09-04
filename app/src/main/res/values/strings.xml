@@ -54,4 +54,5 @@
     <string name="restaurant">Restaurant</string>
     <string name="recommended_for_you">Recommended for you...</string>
     <string name="ad">Ad</string>
+    <string name="image_slider">Image Slider</string>
 </resources>

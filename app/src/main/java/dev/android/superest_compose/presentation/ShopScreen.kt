@@ -22,14 +22,18 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.google.accompanist.pager.ExperimentalPagerApi
 import dev.android.superest_compose.R
 import dev.android.superest_compose.data.ProductItem
 import dev.android.superest_compose.data.ProductItemData
 import dev.android.superest_compose.presentation.component.SearchBar
+import dev.android.superest_compose.presentation.component.SliderBanner
 import dev.android.superest_compose.presentation.component.TopBar
 import dev.android.superest_compose.ui.theme.colorPrimary
 import dev.android.superest_compose.ui.theme.gray
+import javax.annotation.meta.Exclusive
 
+@OptIn(ExperimentalPagerApi::class)
 @Preview
 
 @Composable
@@ -40,36 +44,57 @@ fun HomePage() {
         item {
             TopBar()
             SearchBar(textState)
+            SliderBanner(modifier = Modifier)
         }
-            item {
-                Row(
-                    modifier = Modifier.padding(start = 20.dp, end = 20.dp, bottom = 20.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        text = "Popular Items",
-                        style = TextStyle(
-                            fontSize = 18.sp,
-                       //     fontFamily = FontFamily(Font(R.font.helvetica_neue_bold))
-                        ),
-                        modifier = Modifier.weight(1f)
-                    )
-                    Text(
-                        text = "View All",
-                        style = MaterialTheme.typography.subtitle2.copy(color = colorPrimary)
-                    )
-                }
+        item {
+            Row(
+                modifier = Modifier.padding(start = 20.dp, end = 20.dp, bottom = 20.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Exlcusive Offer",
+                    style = TextStyle(
+                        fontSize = 18.sp,
+                        //     fontFamily = FontFamily(Font(R.font.helvetica_neue_bold))
+                    ),
+                    modifier = Modifier.weight(1f)
+                )
+                Text(
+                    text = "View All",
+                    style = MaterialTheme.typography.subtitle2.copy(color = colorPrimary)
+                )
             }
-            item {
-                PopularFlowersList()
+        }
+        item {
+            ExclusiveOfferList()
+        }
+        item {
+            Row(
+                modifier = Modifier.padding(20.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Best Selling",
+                    style = TextStyle(
+                        fontSize = 18.sp,
+                        //     fontFamily = FontFamily(Font(R.font.helvetica_neue_bold))
+                    ),
+                    modifier = Modifier.weight(1f)
+                )
+                Text(
+                    text = "View All",
+                    style = MaterialTheme.typography.subtitle2.copy(color = colorPrimary)
+                )
+
             }
         }
 
     }
+}
 
 
 @Composable
-private fun PopularFlowersList() {
+private fun ExclusiveOfferList() {
     LazyRow(
         modifier = Modifier.fillMaxWidth()
     ) {
