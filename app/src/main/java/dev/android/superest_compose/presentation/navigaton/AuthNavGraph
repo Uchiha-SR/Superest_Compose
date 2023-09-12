@@ -7,7 +7,12 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
           WelcomeScreen()
         }
         composable(route = AuthScreen.Welcome.route) {
-            ScreenContent(name = AuthScreen.Welcome.route) {}
+            OnboardingScreen(
+				onButtonClicked = {
+					navController.popBackStack()
+					navController.navigate(AuthScreen.home)
+				}
+			)
         }
         composable(route = AuthScreen.Forgot.route) {
             ScreenContent(name = AuthScreen.Forgot.route) {}
@@ -18,5 +23,5 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
 sealed class AuthScreen(val route: String) {
     object Splash : AuthScreen(route = "SPLASH")
     object Welcome : AuthScreen(route = "WELCOME")
-//    object Forgot : AuthScreen(route = "FORGOT")
+   object Home : AuthScreen(route = "HOME")
 }
