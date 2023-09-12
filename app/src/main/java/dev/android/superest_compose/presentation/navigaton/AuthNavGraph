@@ -1,1 +1,22 @@
+fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
+    navigation(
+        route = Graph.AUTHENTICATION,
+        startDestination = AuthScreen.Splash.route
+    ) {
+        composable(route = AuthScreen.Splash.route) {
+          WelcomeScreen()
+        }
+        composable(route = AuthScreen.Welcome.route) {
+            ScreenContent(name = AuthScreen.Welcome.route) {}
+        }
+        composable(route = AuthScreen.Forgot.route) {
+            ScreenContent(name = AuthScreen.Forgot.route) {}
+        }
+    }
+}
 
+sealed class AuthScreen(val route: String) {
+    object Splash : AuthScreen(route = "SPLASH")
+    object Welcome : AuthScreen(route = "WELCOME")
+//    object Forgot : AuthScreen(route = "FORGOT")
+}
