@@ -70,3 +70,42 @@ fun OnboardingScreen(
 		)
 	}
 }
+
+
+data class Colors (
+	val base: Color,
+	val text: Color
+)
+
+@Composable
+fun FilledButton(
+	modifier: Modifier = Modifier,
+	text: String,
+	onButtonClicked: () -> Unit,
+	isDarkTheme: Boolean
+) {
+	val typography = MaterialTheme.typography
+	val colors = Colors(
+		base = if (isDarkTheme) Neutral400 else Neutral900,
+		text = if (isDarkTheme) Neutral900 else Neutral400
+	)
+
+	Button(
+		onClick = onButtonClicked,
+		contentPadding = PaddingValues(vertical = 16.dp),
+		shape = RoundedCornerShape(16.dp),
+		colors = ButtonDefaults.buttonColors(
+			containerColor = colors.base,
+			contentColor = colors.text
+		),
+		modifier = modifier
+			.sizeIn(minWidth = 398.dp)
+			.fillMaxWidth()
+	) {
+		Text(
+			text = text,
+			style = typography.titleMedium,
+			color = colors.text
+		)
+	}
+}
