@@ -1,0 +1,23 @@
+sealed class BottomBarScreen(
+    val route: String,
+    val title: String,
+    val icon: ImageVector
+) {
+    object Shop : BottomBarScreen(
+        route = "SHOP",
+        title = "SHOP",
+        icon = R.drawable.
+    )
+
+    object Profile : BottomBarScreen(
+        route = "PROFILE",
+        title = "PROFILE",
+        icon = Icons.Default.Person
+    )
+
+    object Settings : BottomBarScreen(
+        route = "SETTINGS",
+        title = "SETTINGS",
+        icon = Icons.Default.Settings
+    )
+}
