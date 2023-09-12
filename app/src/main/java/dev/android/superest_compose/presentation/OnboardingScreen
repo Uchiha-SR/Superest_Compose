@@ -1,0 +1,72 @@
+data class Colors(
+	val displayMedium: Color,
+	val displayLarge: Color
+)
+
+@Composable
+fun OnboardingScreen(
+	modifier: Modifier = Modifier,
+	onButtonClicked: () -> Unit
+) {
+	val isDarkTheme = isSystemInDarkTheme()
+	val typography = MaterialTheme.typography
+	val appIconResID = if (isDarkTheme) R.drawable.app_icon_light else R.drawable.app_icon_dark
+
+	val colors = Colors(
+		displayMedium = if (isDarkTheme) Neutral400 else Neutral900,
+		displayLarge = if (isDarkTheme) Main080 else Main100
+	)
+
+	val headlineText = buildAnnotatedString {
+		val text = stringResource(id = R.string.effortlessly)
+
+		withStyle(style = SpanStyle(color = Main100)) {
+			append(text)
+		}
+
+		withStyle(style = SpanStyle(color = colors.displayMedium)) {
+			append(".")
+		}
+	}
+
+	Column(
+		verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.Bottom),
+		modifier = modifier
+			.fillMaxSize()
+			.padding(
+				start = 16.dp,
+				end = 16.dp,
+				bottom = 16.dp
+			)
+	) {
+		Image(
+			painter = painterResource(appIconResID),
+			contentDescription = null,
+			modifier = Modifier.size(48.dp)
+		)
+		
+		Column(
+			verticalArrangement = Arrangement.spacedBy(8.dp)
+		) {
+			Text(
+				text = stringResource(id = R.string.track_and_book_flights),
+				style = typography.displayMedium,
+				color = colors.displayMedium
+			)
+
+			Text(
+				text = headlineText,
+				style = typography.displayLarge,
+				color = colors.displayLarge
+			)
+		}
+
+		Spacer(modifier = modifier.height(2.dp))
+
+		FilledButton(
+			text = stringResource(id = R.string.get_started),
+			onButtonClicked = onButtonClicked,
+			isDarkTheme = isDarkTheme
+		)
+	}
+}
